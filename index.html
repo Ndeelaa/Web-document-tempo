@@ -1,0 +1,3063 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Web Design Document interactif du projet Tempo — structure éditoriale à compléter."
+    />
+    <meta name="theme-color" content="#F7F2E8" />
+    <title>Tempo: Web Design Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("tempo-wdd-theme") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#chapter-01">Aller au document</a>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="doc-nav" aria-label="Navigation du document">
+      <a
+        class="brand"
+        href="#chapter-01"
+        aria-label="Tempo, retour à la couverture"
+        >tempo<span>.</span></a
+      >
+      <button
+        class="progress-wrap chapter-jump-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="chapter-menu"
+        aria-label="Choisir une page du document"
+      >
+        <span id="progress-label">01 / 12</span>
+        <span class="progress-hint">Choisir une page</span>
+        <span class="progress-track"><i id="progress-bar"></i></span>
+      </button>
+      <button
+        class="menu-toggle icon-control"
+        type="button"
+        aria-expanded="false"
+        aria-controls="chapter-menu"
+      >
+        <span class="sr-only">Ouvrir le sommaire</span><i></i><i></i>
+      </button>
+      <nav id="chapter-menu" class="chapter-menu" aria-label="Chapitres">
+        <ol>
+          <li>
+            <a href="#chapter-01"><b>01</b><span>Couverture</span></a>
+          </li>
+          <li>
+            <a href="#chapter-02"><b>02</b><span>Contexte</span></a>
+          </li>
+          <li>
+            <a href="#chapter-03"><b>03</b><span>Persona 01</span></a>
+          </li>
+          <li>
+            <a href="#chapter-04"><b>04</b><span>Persona 02</span></a>
+          </li>
+          <li>
+            <a href="#chapter-05"><b>05</b><span>Architecture</span></a>
+          </li>
+          <li>
+            <a href="#chapter-06"><b>06</b><span>User flow</span></a>
+          </li>
+          <li>
+            <a href="#chapter-07"><b>07</b><span>Direction artistique</span></a>
+          </li>
+          <li>
+            <a href="#chapter-08"><b>08</b><span>Design system</span></a>
+          </li>
+          <li>
+            <a href="#chapter-09"><b>09</b><span>Interface générative</span></a>
+          </li>
+          <li>
+            <a href="#chapter-10"><b>10</b><span>Prototype</span></a>
+          </li>
+          <li>
+            <a href="#chapter-11"><b>11</b><span>Dashboard</span></a>
+          </li>
+          <li>
+            <a href="#chapter-12"><b>12</b><span>Conclusion</span></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="nav-actions">
+        <a
+          class="icon-control prototype-link"
+          href="https://ndeelaa.github.io/Tempo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ouvrir le prototype Tempo"
+          >↗</a
+        >
+        <button
+          id="theme-toggle"
+          class="icon-control"
+          type="button"
+          aria-label="Changer de thème"
+        >
+          <span class="theme-icon" aria-hidden="true">◐</span>
+        </button>
+        <button
+          id="print-button"
+          class="icon-control"
+          type="button"
+          aria-label="Imprimer le document"
+        >
+          ⌁
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="chapter-01"
+        class="chapter cover"
+        data-chapter="01"
+        aria-labelledby="title-01"
+      >
+        <div class="blob-field" aria-hidden="true">
+          <i class="blob blob-a"></i><i class="blob blob-b"></i
+          ><i class="blob blob-c"></i><i class="blob blob-d"></i
+          ><i class="blob blob-e"></i><i class="blob blob-f"></i>
+        </div>
+        <div class="chapter-index">01 <span>/ 12</span></div>
+        <div class="cover-copy">
+          <!-- CONTENT START: SECTION 01 EYEBROW -->
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Web Design Document
+          </p>
+          <!-- CONTENT END: SECTION 01 EYEBROW -->
+          <!-- CONTENT START: SECTION 01 TITLE -->
+          <h1 id="title-01" class="copy-placeholder copy-placeholder--display">
+            TEMPO
+          </h1>
+          <!-- CONTENT END: SECTION 01 TITLE -->
+          <!-- CONTENT START: SECTION 01 SUBTITLE -->
+          <p class="cover-subtitle">La culture au rythme de vos émotions</p>
+          <!-- CONTENT END: SECTION 01 SUBTITLE -->
+          <!-- CONTENT START: SECTION 01 INTRO -->
+          <p class="copy-placeholder copy-placeholder--body copy-wide">
+            Tempo est une application mobile culturelle qui recommande des
+            sorties en fonction de l’état émotionnel de l’utilisateur.
+          </p>
+          <p class="copy-placeholder copy-placeholder--body copy-wide">
+            Plutôt que de lui demander ce qu’il souhaite voir, l’expérience
+            l’invite à représenter visuellement son ressenti afin de lui générer
+            un profil émotionnel qui donnera lieu à des recommandations
+            adaptées.
+          </p>
+          <!-- CONTENT END: SECTION 01 INTRO -->
+          <div class="cover-actions">
+            <a class="tempo-button" href="#chapter-02"
+              ><span>Découvrir le document</span><i>↓</i></a
+            ><a
+              class="tempo-button tempo-button--ghost"
+              href="https://ndeelaa.github.io/Tempo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Prototype interactif ↗</a
+            >
+          </div>
+        </div>
+        <dl class="cover-meta">
+          <div>
+            <dt>Projet</dt>
+            <dd>Bloc 2: Conception, design de l’information et prototypage</dd>
+          </div>
+          <div>
+            <dt>Étudiante</dt>
+            <dd>SENE Ndeela Marie</dd>
+          </div>
+          <div>
+            <dt>École</dt>
+            <dd>ICAN</dd>
+          </div>
+          <div>
+            <dt>Année</dt>
+            <dd>2025–2026</dd>
+          </div>
+        </dl>
+        <a class="scroll-cue" href="#chapter-02"
+          ><span>Découvrir</span><i></i
+        ></a>
+      </section>
+
+      <section
+        id="chapter-02"
+        class="chapter context"
+        data-chapter="02"
+        aria-labelledby="title-02"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">02 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 02 TITLE -->
+          <h2 id="title-02" class="copy-placeholder copy-placeholder--title">
+            Trouver une sortie ne devrait pas toujours commencer par une
+            catégorie
+          </h2>
+          <!-- CONTENT END: SECTION 02 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 02 CONTEXT -->
+        <div class="context-article context-article--intro">
+          <div class="context-section-label">
+            <span>01</span>
+            <h3>Contexte</h3>
+          </div>
+          <div class="context-prose">
+            <p>
+              Le numérique occupe désormais une place centrale dans l’accès aux
+              contenus et aux pratiques culturelles. L’enquête « Pratiques
+              culturelles » du ministère de la Culture, menée en 2018 auprès de
+              plus de 9&nbsp;200 personnes en France métropolitaine, met en
+              évidence la progression durable des usages numériques et leur
+              place particulièrement importante chez les jeunes générations.
+              Elle montre également que ces usages coexistent avec des pratiques
+              culturelles physiques telles que le cinéma, les concerts, les
+              spectacles ou les visites patrimoniales.
+              <a
+                class="source-link"
+                href="https://www.culture.gouv.fr/espace-documentation/statistiques-ministerielles-de-la-culture2/l-enquete-pratiques-culturelles/l-enquete-2018/generations-tous-les-resultats-de-l-enquete-2018?utm_source=chatgpt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter les sources 1 et 2"
+                >[1][2] ↗</a
+              >
+            </p>
+            <p>
+              Les plateformes de découverte culturelle organisent généralement
+              leur offre à partir de critères comme la localisation, la date, la
+              catégorie, le lieu, l’artiste ou les préférences déjà exprimées.
+              Cette logique se retrouve par exemple dans le pass Culture,
+              Eventbrite ou Shotgun, qui permettent de parcourir et réserver des
+              événements à partir de catalogues structurés.
+              <a
+                class="source-link"
+                href="https://pass.culture.fr/les-offres-et-experiences?utm_source=chatgpt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter les sources 15, 16 et 17"
+                >[15][16][17] ↗</a
+              >
+            </p>
+            <p>
+              Ces outils sont particulièrement efficaces lorsqu’une personne
+              sait déjà ce qu’elle recherche. Ils répondent moins directement à
+              une autre situation&nbsp;: avoir envie de sortir, tout en étant
+              incapable de nommer précisément l’activité, l’ambiance ou le lieu
+              souhaité.
+            </p>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 02 CONTEXT -->
+
+        <!-- CONTENT START: SECTION 02 OBSERVATION -->
+        <div class="context-article context-article--observation">
+          <div class="context-section-label">
+            <span>02</span>
+            <h3>Constat</h3>
+          </div>
+          <div class="context-prose">
+            <p>
+              Une offre abondante ne rend pas nécessairement la décision plus
+              simple. Des travaux consacrés à la « surcharge de choix » ont
+              montré qu’un nombre élevé d’options peut, dans certaines
+              situations, augmenter la difficulté de décision, favoriser le
+              report du choix ou réduire la satisfaction. Cet effet n’est
+              toutefois pas systématique&nbsp;: il dépend notamment de la
+              complexité de l’offre, de la difficulté de la tâche et de
+              l’incertitude des préférences de la personne.
+              <a
+                class="source-link"
+                href="https://pubmed.ncbi.nlm.nih.gov/11138768/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter les sources 3 et 4"
+                >[3][4] ↗</a
+              >
+            </p>
+            <p>
+              Les systèmes de recommandation utilisent généralement des
+              informations explicites ou implicites telles que les évaluations,
+              les avis, les clics, les consultations ou les comportements
+              antérieurs. Plusieurs travaux sur les systèmes sensibles aux
+              émotions soulignent cependant que l’état affectif immédiat peut
+              apporter un contexte complémentaire aux préférences déjà
+              observées.
+              <a
+                class="source-link"
+                href="https://www.sciencedirect.com/science/article/pii/S1566253518301234?utm_source=chatgpt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter les sources 5 et 6, publication traduite de l’anglais"
+                >[5][6] ↗</a
+              >
+            </p>
+            <p class="context-emphasis">
+              Tempo explore donc une autre porte d’entrée vers la découverte
+              culturelle&nbsp;: s’appuyer sur le ressenti actuel de
+              l’utilisateur avant de lui recommander des activités adaptées.
+            </p>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 02 OBSERVATION -->
+
+        <!-- CONTENT START: SECTION 02 PROBLEM -->
+        <div class="context-lead context-problem">
+          <span class="context-orb" aria-hidden="true"></span>
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Problématique
+            </p>
+            <p class="copy-placeholder copy-placeholder--statement">
+              Comment transformer une émotion subjective en une recommandation
+              culturelle pertinente, compréhensible et désirable&nbsp;?
+            </p>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 02 PROBLEM -->
+
+        <div class="context-grid context-grid--content">
+          <!-- CONTENT START: SECTION 02 INSIGHT -->
+          <article class="editorial-card featured insight-card">
+            <span class="annotation-line"></span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Insight de conception
+            </p>
+            <blockquote>
+              «&nbsp;Je ne sais pas toujours ce que je veux faire, mais je sais
+              comment je me sens et ce que je veux ressentir.&nbsp;»
+            </blockquote>
+            <p class="method-note">
+              Cette phrase constitue un insight de conception et non le verbatim
+              d’une personne interrogée.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 02 INSIGHT -->
+          <!-- CONTENT START: SECTION 02 VALUE PROPOSITION -->
+          <article class="editorial-card value-card">
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Proposition de valeur
+            </p>
+            <p>
+              Tempo permet à l’utilisateur de représenter son état du moment à
+              travers une création visuelle et interactive.
+            </p>
+            <p>
+              La couleur, la forme, la matière, l’intensité, l’expression et
+              l’univers sonore choisis composent un profil Tempo. Ce profil sert
+              ensuite de base à une sélection simulée d’expériences culturelles.
+            </p>
+            <p>
+              Tempo ne prétend pas mesurer scientifiquement une émotion. Le
+              prototype propose une interprétation créative, destinée uniquement
+              à accompagner la découverte culturelle.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 02 VALUE PROPOSITION -->
+        </div>
+
+        <!-- CONTENT START: SECTION 02 SERVICE PRINCIPLE -->
+        <div class="service-principle">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Principe du service
+          </p>
+          <ol aria-label="Principe du service Tempo">
+            <li><span>01</span><strong>Ressenti</strong></li>
+            <li><span>02</span><strong>Création visuelle</strong></li>
+            <li><span>03</span><strong>Interprétation créative</strong></li>
+            <li><span>04</span><strong>Recommandation culturelle</strong></li>
+          </ol>
+        </div>
+        <!-- CONTENT END: SECTION 02 SERVICE PRINCIPLE -->
+      </section>
+
+      <section
+        id="chapter-03"
+        class="chapter persona persona-a"
+        data-chapter="03"
+        aria-labelledby="title-03"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">03 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 03 TITLE -->
+          <h2 id="title-03" class="copy-placeholder copy-placeholder--title">
+            Maya&nbsp;: chercher une sortie sans prolonger la fatigue de la
+            décision
+          </h2>
+          <!-- CONTENT END: SECTION 03 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 03 STATUS -->
+        <aside class="persona-status">
+          <div>
+            <span>Statut du profil</span><strong>Proto-persona fictif</strong>
+          </div>
+          <p>
+            Maya est un proto-persona fictif créé pour orienter la conception.
+          </p>
+          <p>
+            Ce profil ne résulte pas d’une enquête utilisateur dédiée. Il
+            synthétise la cible des 20–35 ans définie dans le brief, le
+            benchmark des plateformes culturelles et plusieurs hypothèses
+            d’usage qui devront être vérifiées dans une phase ultérieure.
+          </p>
+        </aside>
+        <!-- CONTENT END: SECTION 03 STATUS -->
+
+        <div class="persona-layout persona-layout--maya">
+          <!-- CONTENT START: SECTION 03 IDENTITY -->
+          <div class="persona-portrait-column">
+            <div
+              class="media-placeholder has-media ratio-portrait"
+              data-replacement="assets/images/Maya.jpeg"
+            >
+              <img
+                class="media-asset"
+                src="assets/images/Maya.jpeg"
+                alt="Portrait illustratif du proto-persona Maya"
+                loading="lazy"
+              />
+            </div>
+            <div class="persona-identity-card">
+              <p class="copy-placeholder copy-placeholder--eyebrow">Identité</p>
+              <h3>Maya, 24 ans</h3>
+              <ul>
+                <li>Étudiante en master et jeune active</li>
+                <li>Paris</li>
+                <li>Usage numérique intensif</li>
+                <li>Deux à trois sorties culturelles par mois</li>
+              </ul>
+            </div>
+          </div>
+          <!-- CONTENT END: SECTION 03 IDENTITY -->
+
+          <!-- CONTENT START: SECTION 03 PROFILE -->
+          <article class="persona-profile persona-profile--copy">
+            <p class="copy-placeholder copy-placeholder--eyebrow">Profil</p>
+            <p>
+              Maya aime les expositions, les projections indépendantes et les
+              expériences immersives. Elle découvre des sorties à travers
+              plusieurs canaux numériques, comme Groupon ou Fever, les
+              recommandations de son entourage et différentes plateformes
+              culturelles.
+            </p>
+            <p>
+              Elle enregistre régulièrement des événements, mais repousse
+              parfois sa décision. Après une journée chargée, comparer les
+              lieux, les horaires, les prix et les ambiances peut devenir une
+              tâche supplémentaire.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 03 PROFILE -->
+
+          <div class="persona-columns persona-columns--maya">
+            <!-- CONTENT START: SECTION 03 GOALS -->
+            <article>
+              <h3>Objectifs</h3>
+              <ul>
+                <li>
+                  Trouver rapidement une activité adaptée à son état du moment.
+                </li>
+                <li>
+                  Découvrir des événements qu’elle ne rechercherait pas
+                  spontanément.
+                </li>
+                <li>
+                  Éviter de consulter plusieurs plateformes successivement.
+                </li>
+                <li>Comprendre pourquoi une sortie lui est recommandée.</li>
+                <li>Enregistrer facilement les propositions intéressantes.</li>
+              </ul>
+            </article>
+            <!-- CONTENT END: SECTION 03 GOALS -->
+            <!-- CONTENT START: SECTION 03 FRUSTRATIONS -->
+            <article>
+              <h3>Frustrations</h3>
+              <ul>
+                <li>Trop de choix et de filtres à parcourir.</li>
+                <li>Recommandations parfois trop générales.</li>
+                <li>
+                  Manque d’informations sur l’ambiance réelle d’un événement.
+                </li>
+                <li>Difficulté à se décider lorsqu’elle est fatiguée.</li>
+                <li>Événements sauvegardés puis oubliés.</li>
+              </ul>
+            </article>
+            <!-- CONTENT END: SECTION 03 FRUSTRATIONS -->
+          </div>
+
+          <!-- CONTENT START: SECTION 03 PRIMARY NEED -->
+          <article class="persona-need persona-need--wide">
+            <span>Besoin principal</span>
+            <p>
+              Trouver une sortie pertinente sans devoir connaître à l’avance la
+              catégorie exacte de l’activité recherchée.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 03 PRIMARY NEED -->
+
+          <!-- CONTENT START: SECTION 03 SCENARIO -->
+          <article class="persona-scenario persona-scenario--wide">
+            <span>Scénario d’utilisation</span>
+            <p>
+              Après une journée fatigante, Maya souhaite sortir sans rejoindre
+              un événement très animé.
+            </p>
+            <p>
+              Elle ouvre Tempo, compose une forme aux mouvements doux, choisit
+              une intensité modérée et une palette froide. Le profil généré
+              privilégie alors des expériences calmes et immersives.
+            </p>
+            <p>
+              Tempo lui propose une projection contemplative à proximité,
+              accompagnée d’une explication reliant l’ambiance de l’événement
+              aux caractéristiques de son profil.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 03 SCENARIO -->
+        </div>
+
+        <!-- CONTENT START: SECTION 03 SCENARIO QUOTE -->
+        <figure class="persona-quote">
+          <blockquote>
+            «&nbsp;Je veux sortir, mais je n’ai pas envie de passer une heure à
+            chercher quoi faire.&nbsp;»
+          </blockquote>
+          <figcaption>
+            Cette citation est fictive et sert uniquement à illustrer le
+            scénario du persona.
+          </figcaption>
+        </figure>
+        <!-- CONTENT END: SECTION 03 SCENARIO QUOTE -->
+
+        <!-- CONTENT START: SECTION 03 DOCUMENTARY BASIS -->
+        <aside class="persona-documentation">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Base documentaire
+          </p>
+          <p>
+            La création de ce profil s’inscrit dans un contexte où les pratiques
+            numériques sont particulièrement présentes chez les jeunes
+            générations et coexistent avec les sorties et pratiques culturelles
+            physiques.
+            <a
+              class="source-link"
+              href="https://www.culture.gouv.fr/espace-documentation/statistiques-ministerielles-de-la-culture2/l-enquete-pratiques-culturelles/l-enquete-2018/generations-tous-les-resultats-de-l-enquete-2018?utm_source=chatgpt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Consulter les sources 1 et 2"
+              >[1][2] ↗</a
+            >
+          </p>
+        </aside>
+        <!-- CONTENT END: SECTION 03 DOCUMENTARY BASIS -->
+      </section>
+
+      <section
+        id="chapter-04"
+        class="chapter persona persona-b"
+        data-chapter="04"
+        aria-labelledby="title-04"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">04 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 04 TITLE -->
+          <h2 id="title-04" class="copy-placeholder copy-placeholder--title">
+            Adam&nbsp;: découvrir autre chose sans perdre la pertinence
+          </h2>
+          <!-- CONTENT END: SECTION 04 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 04 STATUS -->
+        <aside class="persona-status persona-status--adam">
+          <div>
+            <span>Statut du profil</span><strong>Proto-persona fictif</strong>
+          </div>
+          <p>Adam est un proto-persona fictif.</p>
+          <p>
+            Il ne constitue pas un résultat d’étude utilisateur. Il permet
+            d’explorer un besoin complémentaire à celui de Maya&nbsp;: favoriser
+            la surprise et la diversification culturelle, tout en conservant des
+            recommandations compréhensibles.
+          </p>
+        </aside>
+        <!-- CONTENT END: SECTION 04 STATUS -->
+
+        <div class="persona-b-grid persona-b-grid--adam">
+          <!-- CONTENT START: SECTION 04 IDENTITY -->
+          <div class="persona-b-copy adam-identity">
+            <p class="copy-placeholder copy-placeholder--eyebrow">Identité</p>
+            <h3 class="copy-placeholder copy-placeholder--statement">
+              Adam, 30 ans
+            </h3>
+            <ul class="adam-facts">
+              <li>Chef de projet</li>
+              <li>Lyon</li>
+              <li>Usage numérique régulier</li>
+              <li>Une sortie culturelle par semaine</li>
+            </ul>
+          </div>
+          <div
+            class="media-placeholder has-media ratio-square adam-portrait"
+            data-replacement="assets/images/Adam.jpeg"
+          >
+            <img
+              class="media-asset"
+              src="assets/images/Adam.jpeg"
+              alt="Portrait illustratif du proto-persona Adam"
+              loading="lazy"
+            />
+          </div>
+          <!-- CONTENT END: SECTION 04 IDENTITY -->
+          <!-- CONTENT START: SECTION 04 PRIMARY NEED -->
+          <div class="radial-need radial-need--adam">
+            <span
+              ><small>Besoin principal</small>Recevoir des recommandations assez
+              personnalisées pour rester pertinentes, mais assez ouvertes pour
+              favoriser la découverte.</span
+            ><i></i><i></i><i></i>
+          </div>
+          <!-- CONTENT END: SECTION 04 PRIMARY NEED -->
+        </div>
+
+        <!-- CONTENT START: SECTION 04 PROFILE -->
+        <article class="adam-profile">
+          <div>
+            <span>01</span>
+            <h3>Profil</h3>
+          </div>
+          <div>
+            <p>
+              Adam apprécie les concerts, le cinéma et les événements
+              collectifs. Il fréquente souvent les mêmes lieux et consulte
+              principalement des événements déjà connus ou recommandés par son
+              entourage.
+            </p>
+            <p>
+              Il aimerait diversifier ses habitudes, mais les plateformes
+              fondées sur ses consultations et préférences passées peuvent
+              renforcer les choix qu’il connaît déjà.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 04 PROFILE -->
+
+        <div class="adam-needs-grid">
+          <!-- CONTENT START: SECTION 04 GOALS -->
+          <article>
+            <b>02</b>
+            <h3>Objectifs</h3>
+            <ul>
+              <li>Sortir de ses habitudes culturelles.</li>
+              <li>
+                Trouver une activité correspondant à son niveau d’énergie.
+              </li>
+              <li>Partager facilement une sortie avec ses proches.</li>
+              <li>Identifier rapidement les informations essentielles.</li>
+              <li>
+                Recevoir des recommandations pertinentes mais plus inattendues.
+              </li>
+            </ul>
+          </article>
+          <!-- CONTENT END: SECTION 04 GOALS -->
+          <!-- CONTENT START: SECTION 04 FRUSTRATIONS -->
+          <article>
+            <b>03</b>
+            <h3>Frustrations</h3>
+            <ul>
+              <li>Suggestions proches de ses habitudes existantes.</li>
+              <li>Découverte limitée à des catégories déjà consultées.</li>
+              <li>Informations parfois dispersées.</li>
+              <li>Difficulté à évaluer l’ambiance sociale d’un événement.</li>
+              <li>
+                Crainte de choisir une sortie inadaptée à son énergie du moment.
+              </li>
+            </ul>
+          </article>
+          <!-- CONTENT END: SECTION 04 FRUSTRATIONS -->
+        </div>
+
+        <!-- CONTENT START: SECTION 04 SCENARIO -->
+        <article class="adam-scenario">
+          <div class="adam-scenario-heading">
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Scénario d’utilisation
+            </p>
+            <h3>
+              Un vendredi soir, Adam se sent énergique et souhaite voir du
+              monde.
+            </h3>
+          </div>
+          <div class="adam-scenario-steps">
+            <p>
+              <b>01</b>Il compose une forme large, sélectionne une couleur
+              chaude, augmente son intensité et lui associe un son rythmé.
+            </p>
+            <p>
+              <b>02</b>Tempo lui propose alors un concert intimiste et une
+              installation participative.
+            </p>
+            <p>
+              <b>03</b>Il consulte les raisons de la recommandation, partage
+              l’événement avec ses proches puis choisit la sortie.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 04 SCENARIO -->
+
+        <!-- CONTENT START: SECTION 04 SCENARIO QUOTE -->
+        <figure class="persona-quote persona-quote--adam">
+          <blockquote>
+            «&nbsp;J’ai envie de découvrir autre chose, mais les applications me
+            montrent souvent des événements proches de ce que je connais
+            déjà.&nbsp;»
+          </blockquote>
+          <figcaption>Cette citation est fictive.</figcaption>
+        </figure>
+        <!-- CONTENT END: SECTION 04 SCENARIO QUOTE -->
+
+        <!-- CONTENT START: SECTION 04 DOCUMENTARY BASIS -->
+        <aside class="persona-documentation">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Base documentaire
+          </p>
+          <p>
+            Les systèmes de recommandation s’appuient traditionnellement sur les
+            préférences, les évaluations et les comportements antérieurs. Tempo
+            explore, à l’échelle d’un prototype, l’ajout d’un contexte
+            émotionnel déclaré directement par l’utilisateur.
+            <a
+              class="source-link"
+              href="https://www.sciencedirect.com/science/article/abs/pii/S1566253518301234?utm_source=chatgpt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Consulter les sources 5 et 6"
+              >[5][6] ↗</a
+            >
+          </p>
+        </aside>
+        <!-- CONTENT END: SECTION 04 DOCUMENTARY BASIS -->
+      </section>
+
+      <section
+        id="chapter-05"
+        class="chapter architecture"
+        data-chapter="05"
+        aria-labelledby="title-05"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">05 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 05 TITLE -->
+          <h2 id="title-05" class="copy-placeholder copy-placeholder--title">
+            Une architecture centrée sur la création du Tempo
+          </h2>
+          <!-- CONTENT END: SECTION 05 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 05 GENERAL ORGANIZATION -->
+        <div class="architecture-intro">
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Organisation générale
+            </p>
+            <p>
+              L’architecture de Tempo a été conçue pour conserver la création
+              émotionnelle au centre du produit, tout en donnant un accès direct
+              aux fonctionnalités plus conventionnelles&nbsp;: explorer,
+              sauvegarder et retrouver ses sorties.
+            </p>
+          </div>
+          <div>
+            <p>
+              L’expérience est structurée autour de quatre fonctions
+              principales&nbsp;:
+            </p>
+            <ol>
+              <li>
+                <b>01</b><span>Comprendre le fonctionnement de Tempo.</span>
+              </li>
+              <li>
+                <b>02</b
+                ><span
+                  >Créer et interpréter une représentation émotionnelle.</span
+                >
+              </li>
+              <li>
+                <b>03</b><span>Découvrir des expériences culturelles.</span>
+              </li>
+              <li>
+                <b>04</b
+                ><span>Sauvegarder et retrouver ses recommandations.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 05 GENERAL ORGANIZATION -->
+        <div class="architecture-layout">
+          <div
+            class="sitemap sitemap--tempo"
+            role="tree"
+            aria-label="Architecture interactive de Tempo"
+          >
+            <button
+              class="site-node root active"
+              role="treeitem"
+              data-node="0"
+              data-label="Racine du produit"
+              data-title="Tempo"
+              data-copy="L’application mobile culturelle et l’ensemble de ses parcours."
+            >
+              <b>Tempo</b><span>Niveau 00</span>
+            </button>
+            <div class="site-branches site-branches--tempo">
+              <div>
+                <button
+                  class="site-node family-a"
+                  role="treeitem"
+                  data-node="1"
+                  data-label="Parcours"
+                  data-title="Onboarding"
+                  data-copy="Comprendre le fonctionnement de Tempo avant d’entrer dans l’application."
+                >
+                  <b>Onboarding</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="2"
+                  data-label="Onboarding"
+                  data-title="Découverte du concept"
+                  data-copy="Présentation du principe de Tempo."
+                >
+                  <b>Découverte du concept</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="3"
+                  data-label="Onboarding"
+                  data-title="Choix d’une émotion"
+                  data-copy="Sélection du ressenti initial."
+                >
+                  <b>Choix d’une émotion</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="4"
+                  data-label="Onboarding"
+                  data-title="Réglage de l’intensité"
+                  data-copy="Précision du niveau de ressenti."
+                >
+                  <b>Réglage de l’intensité</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="5"
+                  data-label="Onboarding"
+                  data-title="Exemple de recommandation"
+                  data-copy="Démonstration du résultat culturel."
+                >
+                  <b>Exemple de recommandation</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-b"
+                  role="treeitem"
+                  data-node="6"
+                  data-label="Parcours"
+                  data-title="Accueil"
+                  data-copy="Point d’entrée vers la création et les recommandations."
+                >
+                  <b>Accueil</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="7"
+                  data-label="Accueil"
+                  data-title="Créer mon Tempo"
+                  data-copy="Action principale et distinctive du service."
+                >
+                  <b>Créer mon Tempo</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="8"
+                  data-label="Accueil"
+                  data-title="Recommandations du moment"
+                  data-copy="Accès direct aux propositions culturelles."
+                >
+                  <b>Recommandations du moment</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="9"
+                  data-label="Accueil"
+                  data-title="Dernier Tempo"
+                  data-copy="Retour vers la dernière création émotionnelle."
+                >
+                  <b>Dernier Tempo</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-c"
+                  role="treeitem"
+                  data-node="10"
+                  data-label="Parcours central"
+                  data-title="Création de l’émotion"
+                  data-copy="Composition visuelle et interactive du profil Tempo."
+                >
+                  <b>Création de l’émotion</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="11"
+                  data-label="Création"
+                  data-title="Nom"
+                  data-copy="Nommer la création émotionnelle."
+                >
+                  <b>Nom</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="12"
+                  data-label="Création"
+                  data-title="Son"
+                  data-copy="Associer un univers sonore."
+                >
+                  <b>Son</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="13"
+                  data-label="Création"
+                  data-title="Couleur"
+                  data-copy="Définir la palette émotionnelle."
+                >
+                  <b>Couleur</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="14"
+                  data-label="Création"
+                  data-title="Forme"
+                  data-copy="Choisir une silhouette organique."
+                >
+                  <b>Forme</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="15"
+                  data-label="Création"
+                  data-title="Matière"
+                  data-copy="Appliquer une texture à la forme."
+                >
+                  <b>Matière</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="16"
+                  data-label="Création"
+                  data-title="Intensité"
+                  data-copy="Faire varier la présence et le mouvement."
+                >
+                  <b>Intensité</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="17"
+                  data-label="Création"
+                  data-title="Visage"
+                  data-copy="Choisir une expression."
+                >
+                  <b>Visage</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="18"
+                  data-label="Création"
+                  data-title="Modelage"
+                  data-copy="Transformer la forme par le geste."
+                >
+                  <b>Modelage</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="19"
+                  data-label="Création"
+                  data-title="Dessin libre"
+                  data-copy="Composer une forme avec des outils de dessin."
+                >
+                  <b>Dessin libre</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-d"
+                  role="treeitem"
+                  data-node="20"
+                  data-label="Résultat"
+                  data-title="Profil Tempo"
+                  data-copy="Lecture créative de la représentation émotionnelle."
+                >
+                  <b>Profil Tempo</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="21"
+                  data-label="Profil Tempo"
+                  data-title="Création générée"
+                  data-copy="Restitution de la forme composée."
+                >
+                  <b>Création générée</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="22"
+                  data-label="Profil Tempo"
+                  data-title="Interprétation"
+                  data-copy="Explication créative des choix visuels."
+                >
+                  <b>Interprétation</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="23"
+                  data-label="Profil Tempo"
+                  data-title="Recommandations associées"
+                  data-copy="Accès aux expériences culturelles proposées."
+                >
+                  <b>Recommandations associées</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-e"
+                  role="treeitem"
+                  data-node="24"
+                  data-label="Navigation"
+                  data-title="Explorer"
+                  data-copy="Rechercher et filtrer les événements culturels."
+                >
+                  <b>Explorer</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="25"
+                  data-label="Explorer"
+                  data-title="Recherche"
+                  data-copy="Rechercher une proposition culturelle."
+                >
+                  <b>Recherche</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="26"
+                  data-label="Explorer"
+                  data-title="Filtres"
+                  data-copy="Affiner les recommandations."
+                >
+                  <b>Filtres</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="27"
+                  data-label="Explorer"
+                  data-title="Liste des événements"
+                  data-copy="Parcourir les résultats disponibles."
+                >
+                  <b>Liste des événements</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-f"
+                  role="treeitem"
+                  data-node="28"
+                  data-label="Contenu"
+                  data-title="Événement"
+                  data-copy="Comprendre la sortie et effectuer l’action finale."
+                >
+                  <b>Événement</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="29"
+                  data-label="Événement"
+                  data-title="Informations pratiques"
+                  data-copy="Consulter le lieu, la date, l’horaire et le prix."
+                >
+                  <b>Informations pratiques</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="30"
+                  data-label="Événement"
+                  data-title="Compatibilité"
+                  data-copy="Visualiser l’adéquation avec le profil Tempo."
+                >
+                  <b>Compatibilité</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="31"
+                  data-label="Événement"
+                  data-title="Explication personnalisée"
+                  data-copy="Comprendre pourquoi la sortie est recommandée."
+                >
+                  <b>Explication personnalisée</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="32"
+                  data-label="Événement"
+                  data-title="Témoignages fictifs"
+                  data-copy="Illustrer l’expérience sans revendiquer de retours réels."
+                >
+                  <b>Témoignages fictifs</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="33"
+                  data-label="Événement"
+                  data-title="Choisir la sortie"
+                  data-copy="Passer à l’action finale."
+                >
+                  <b>Choisir la sortie</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-g"
+                  role="treeitem"
+                  data-node="34"
+                  data-label="Navigation"
+                  data-title="Favoris"
+                  data-copy="Retrouver les sorties enregistrées."
+                >
+                  <b>Favoris</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="35"
+                  data-label="Favoris"
+                  data-title="Sorties enregistrées"
+                  data-copy="Conserver les propositions intéressantes."
+                >
+                  <b>Sorties enregistrées</b><span>Niveau 02</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="site-node family-h"
+                  role="treeitem"
+                  data-node="36"
+                  data-label="Navigation"
+                  data-title="Profil"
+                  data-copy="Retrouver ses créations, ses sorties et ses préférences."
+                >
+                  <b>Profil</b><span>Niveau 01</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="37"
+                  data-label="Profil"
+                  data-title="Dernier Tempo"
+                  data-copy="Consulter la dernière création."
+                >
+                  <b>Dernier Tempo</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="38"
+                  data-label="Profil"
+                  data-title="Créations enregistrées"
+                  data-copy="Retrouver les profils émotionnels conservés."
+                >
+                  <b>Créations enregistrées</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="39"
+                  data-label="Profil"
+                  data-title="Sorties sauvegardées"
+                  data-copy="Accéder aux événements favoris."
+                >
+                  <b>Sorties sauvegardées</b><span>Niveau 02</span></button
+                ><button
+                  class="site-node child"
+                  role="treeitem"
+                  data-node="40"
+                  data-label="Profil"
+                  data-title="Préférences"
+                  data-copy="Régler les options de l’application."
+                >
+                  <b>Préférences</b><span>Niveau 02</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <aside class="node-detail" aria-live="polite">
+            <span id="node-index">00</span>
+            <p
+              class="copy-placeholder copy-placeholder--eyebrow"
+              id="node-label"
+            >
+              Racine du produit
+            </p>
+            <h3 id="node-title">Tempo</h3>
+            <p id="node-copy">
+              L’application mobile culturelle et l’ensemble de ses parcours.
+            </p>
+          </aside>
+        </div>
+        <!-- CONTENT START: SECTION 05 NAVIGATION AND UX -->
+        <div class="architecture-notes">
+          <article>
+            <span>Navigation principale</span>
+            <p>La barre de navigation comprend quatre entrées&nbsp;:</p>
+            <ul>
+              <li>Accueil</li>
+              <li>Explorer</li>
+              <li>Favoris</li>
+              <li>Profil</li>
+            </ul>
+            <p>
+              L’action «&nbsp;Créer mon Tempo&nbsp;» reste davantage mise en
+              valeur depuis l’accueil, car elle constitue la fonction
+              distinctive du service.
+            </p>
+          </article>
+          <article>
+            <span>Justification UX</span>
+            <p>
+              Toutes les fonctions ne sont pas placées au même niveau de
+              priorité.
+            </p>
+            <p>
+              La création émotionnelle guide le parcours principal, tandis que
+              les fonctions secondaires restent accessibles à travers une
+              navigation mobile familière.
+            </p>
+            <p>
+              Les informations et les actions apparaissent au moment où elles
+              deviennent utiles. Cette organisation rejoint notamment les
+              principes de visibilité de l’état du système, de cohérence et de
+              reconnaissance plutôt que de mémorisation.
+            </p>
+          </article>
+        </div>
+        <!-- CONTENT END: SECTION 05 NAVIGATION AND UX -->
+      </section>
+
+      <section
+        id="chapter-06"
+        class="chapter flow"
+        data-chapter="06"
+        aria-labelledby="title-06"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">06 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 06 TITLE -->
+          <h2 id="title-06" class="copy-placeholder copy-placeholder--title">
+            Du ressenti à une action culturelle concrète
+          </h2>
+          <!-- CONTENT END: SECTION 06 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 06 MAIN FLOW -->
+        <div class="flow-intro">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Parcours principal
+          </p>
+          <p>
+            Sélectionnez une étape pour afficher son rôle dans le parcours et
+            préparer l’intégration de sa capture d’écran.
+          </p>
+        </div>
+        <div class="flow-canvas flow-canvas--tempo">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 1200 380"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M20 205 C120 20 235 350 350 185 S555 25 665 190 S855 345 945 180 S1095 55 1180 190"
+            />
+          </svg>
+          <div class="flow-steps" role="list">
+            <button
+              class="flow-step active"
+              data-flow="1"
+              data-title="Ouverture de Tempo"
+              data-description="L’utilisateur entre dans l’expérience Tempo."
+              role="listitem"
+            >
+              <b>01</b><span>Ouverture</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="2"
+              data-title="Découverte du concept"
+              data-description="Le principe de recommandation culturelle par le ressenti est présenté."
+              role="listitem"
+            >
+              <b>02</b><span>Concept</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="3"
+              data-title="Choix d’une émotion"
+              data-description="L’utilisateur sélectionne une première famille émotionnelle."
+              role="listitem"
+            >
+              <b>03</b><span>Émotion</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="4"
+              data-title="Réglage de son intensité"
+              data-description="Le niveau du ressenti est précisé avant la création."
+              role="listitem"
+            >
+              <b>04</b><span>Intensité</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="5"
+              data-title="Création visuelle du ressenti"
+              data-description="La couleur, la forme, la matière, le visage, le son, le dessin et le modelage composent la représentation."
+              role="listitem"
+            >
+              <b>05</b><span>Création</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="6"
+              data-title="Génération du profil Tempo"
+              data-description="La création devient un profil Tempo visuel et personnalisé."
+              role="listitem"
+            >
+              <b>06</b><span>Profil</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="7"
+              data-title="Interprétation de la création"
+              data-description="Tempo présente une lecture créative et accessible des caractéristiques sélectionnées."
+              role="listitem"
+            >
+              <b>07</b><span>Interprétation</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="8"
+              data-title="Recommandations personnalisées"
+              data-description="Des expériences culturelles sont associées au profil généré."
+              role="listitem"
+            >
+              <b>08</b><span>Recommandations</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="9"
+              data-title="Consultation d’un événement"
+              data-description="L’utilisateur consulte les informations, l’ambiance et la justification de la recommandation."
+              role="listitem"
+            >
+              <b>09</b><span>Événement</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="10"
+              data-title="Sauvegarde, partage ou sélection"
+              data-description="La proposition peut être conservée, transmise ou choisie."
+              role="listitem"
+            >
+              <b>10</b><span>Action</span>
+            </button>
+            <button
+              class="flow-step"
+              data-flow="11"
+              data-title="Confirmation"
+              data-description="Tempo confirme l’action culturelle choisie par l’utilisateur."
+              role="listitem"
+            >
+              <b>11</b><span>Confirmation</span>
+            </button>
+          </div>
+        </div>
+        <div class="flow-detail">
+          <div
+            class="media-placeholder ratio-mobile"
+            data-replacement="assets/images/flow-step-01.png"
+          >
+            <span class="media-placeholder__label">[CAPTURE D’ÉTAPE]</span
+            ><span class="media-placeholder__path" id="flow-path"
+              >assets/images/flow-step-01.png</span
+            >
+          </div>
+          <div>
+            <p
+              class="copy-placeholder copy-placeholder--eyebrow"
+              id="flow-label"
+            >
+              Étape 01 / 11
+            </p>
+            <h3 id="flow-title">Ouverture de Tempo</h3>
+            <p id="flow-description">
+              L’utilisateur entre dans l’expérience Tempo.
+            </p>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 06 MAIN FLOW -->
+
+        <!-- CONTENT START: SECTION 06 PHASES -->
+        <div class="flow-phases">
+          <article class="flow-phase flow-phase--express">
+            <div class="flow-phase-heading">
+              <b>01</b><span>Étape 1</span>
+              <h3>Exprimer</h3>
+            </div>
+            <div>
+              <p>
+                L’utilisateur compose sa représentation à travers plusieurs
+                dimensions&nbsp;:
+              </p>
+              <ul>
+                <li>couleur</li>
+                <li>forme</li>
+                <li>matière</li>
+                <li>intensité</li>
+                <li>visage</li>
+                <li>son</li>
+                <li>dessin libre</li>
+                <li>modelage</li>
+              </ul>
+              <p>
+                Cette étape de l’application évite de commencer immédiatement
+                par une longue liste de catégories culturelles ou un
+                questionnaire détaillé.
+              </p>
+            </div>
+          </article>
+          <article class="flow-phase flow-phase--understand">
+            <div class="flow-phase-heading">
+              <b>02</b><span>Étape 2</span>
+              <h3>Comprendre</h3>
+            </div>
+            <div>
+              <p>
+                Tempo génère une forme émotionnelle et présente une
+                interprétation accessible de ses principales caractéristiques.
+              </p>
+              <p>
+                Chaque action produit un retour visible. L’utilisateur peut
+                observer les changements provoqués par ses choix et revenir sur
+                une modification.
+              </p>
+            </div>
+          </article>
+          <article class="flow-phase flow-phase--discover">
+            <div class="flow-phase-heading">
+              <b>03</b><span>Étape 3</span>
+              <h3>Découvrir</h3>
+            </div>
+            <div>
+              <p>
+                Des expériences culturelles sont associées au profil généré.
+              </p>
+              <p>
+                Chaque proposition contient une justification afin que
+                l’utilisateur comprenne la relation imaginée entre son Tempo et
+                l’activité présentée.
+              </p>
+            </div>
+          </article>
+          <article class="flow-phase flow-phase--act">
+            <div class="flow-phase-heading">
+              <b>04</b><span>Étape 4</span>
+              <h3>Agir</h3>
+            </div>
+            <div>
+              <p>L’utilisateur peut&nbsp;:</p>
+              <ul>
+                <li>consulter le détail d’une activité</li>
+                <li>la sauvegarder</li>
+                <li>la partager</li>
+                <li>choisir la sortie proposée</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <!-- CONTENT END: SECTION 06 PHASES -->
+
+        <!-- CONTENT START: SECTION 06 DESIGN CHOICES -->
+        <div class="flow-design-choice">
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Choix de conception
+            </p>
+            <h3>L’expression reste créative, le parcours reste maîtrisable.</h3>
+          </div>
+          <div>
+            <p>
+              L’interaction créative rend la saisie émotionnelle plus expressive
+              qu’un simple questionnaire.
+            </p>
+            <p>
+              Les actions de retour, de modification et de recomposition
+              permettent néanmoins de conserver la maîtrise du parcours.
+            </p>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 06 DESIGN CHOICES -->
+
+        <!-- CONTENT START: SECTION 06 MAIN LOOP -->
+        <div class="flow-loop">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Boucle principale
+          </p>
+          <ol>
+            <li><span>01</span><strong>Créer</strong></li>
+            <li><span>02</span><strong>Interpréter</strong></li>
+            <li><span>03</span><strong>Recommander</strong></li>
+            <li><span>04</span><strong>Choisir</strong></li>
+          </ol>
+        </div>
+        <!-- CONTENT END: SECTION 06 MAIN LOOP -->
+      </section>
+
+      <section
+        id="chapter-07"
+        class="chapter art-direction"
+        data-chapter="07"
+        aria-labelledby="title-07"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">07 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 07 TITLE -->
+          <h2 id="title-07" class="copy-placeholder copy-placeholder--title">
+            Des matières et textures pour composer des émotions au service de la
+            découverte culturelle
+          </h2>
+          <!-- CONTENT END: SECTION 07 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 07 VISUAL CONCEPT -->
+        <div class="art-concept">
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Concept visuel
+            </p>
+            <p>
+              La direction artistique de Tempo repose sur la rencontre de deux
+              univers&nbsp;:
+            </p>
+          </div>
+          <div class="art-duality">
+            <span>La sensibilité émotionnelle</span><i>×</i
+            ><span>La découverte culturelle</span>
+          </div>
+          <p>
+            L’objectif n’est pas de reproduire les codes d’une application
+            médicale ou thérapeutique, mais de proposer une expérience
+            chaleureuse, expressive et éditoriale.
+          </p>
+        </div>
+        <!-- CONTENT END: SECTION 07 VISUAL CONCEPT -->
+
+        <div class="moodboard moodboard--tempo">
+          <div
+            class="media-placeholder mood-large ratio-portrait"
+            data-replacement="assets/images/moodboard-01.jpg"
+          >
+            <span class="media-placeholder__label"
+              >[RÉFÉRENCE VISUELLE PRINCIPALE]</span
+            ><span class="media-placeholder__path"
+              >assets/images/moodboard-01.jpg</span
+            >
+          </div>
+          <div class="keyword-cloud">
+            <span>Organique</span><span>Chaleureux</span><span>Culturel</span
+            ><span>Expressif</span><span>Immersif</span><span>Accessible</span
+            ><span>Contemporain</span>
+          </div>
+          <div class="swatch-stack" aria-label="Palette émotionnelle Tempo">
+            <i title="Crème"></i><i title="Corail"></i><i title="Jaune"></i
+            ><i title="Lavande"></i><i title="Bleu"></i>
+          </div>
+          <div
+            class="media-placeholder mood-wide ratio-landscape"
+            data-replacement="assets/images/moodboard-02.jpg"
+          >
+            <span class="media-placeholder__label">[MATIÈRE ET TEXTURE]</span
+            ><span class="media-placeholder__path"
+              >assets/images/moodboard-02.jpg</span
+            >
+          </div>
+          <div class="type-specimen">
+            <span>Typographie éditoriale</span><b>Aa</b>
+            <p>Manrope × Inter</p>
+          </div>
+          <div
+            class="media-placeholder has-media mood-small ratio-square"
+            data-replacement="assets/images/prototype-poster.png"
+          >
+            <img class="media-asset" src="assets/images/prototype-poster.png" alt="Écran d’accueil de l’application mobile Tempo" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- CONTENT START: SECTION 07 ORGANIC SHAPES -->
+        <article class="art-feature art-feature--shapes">
+          <div class="art-feature-copy">
+            <span>01</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Formes organiques
+            </p>
+            <h3>Une matière vivante plutôt qu’un symbole figé.</h3>
+            <p>
+              Les émotions sont représentées par des formes souples, imparfaites
+              et évolutives.
+            </p>
+            <p>
+              Leur mouvement lent, leurs contours variables et leurs textures
+              donnent l’impression d’une matière vivante.
+            </p>
+            <p>
+              L’Atlas of Emotions, conçu par Eve Ekman et Paul Ekman, a
+              notamment servi de référence pour réfléchir à une représentation
+              visuelle des familles émotionnelles, de leurs intensités et de
+              leurs mouvements. Il s’agit d’une inspiration conceptuelle&nbsp;:
+              Tempo n’intègre pas cet atlas comme outil diagnostique ou
+              scientifique.
+              <a
+                class="source-link source-link--dark"
+                href="https://atlasofemotions.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter la source 13, Atlas of Emotions"
+                >[13] ↗</a
+              >
+            </p>
+          </div>
+          <div
+            class="art-shape-stage"
+            aria-label="Démonstration de formes organiques"
+          >
+            <i class="art-blob art-blob--one"></i
+            ><i class="art-blob art-blob--two"></i
+            ><i class="art-blob art-blob--three"></i>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 07 ORGANIC SHAPES -->
+
+        <!-- CONTENT START: SECTION 07 EMOTIONAL COLORS -->
+        <article class="art-feature art-feature--colors">
+          <div class="art-feature-copy">
+            <span>02</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Couleurs émotionnelles
+            </p>
+            <h3>
+              Créer une atmosphère sans dépendre uniquement de la couleur.
+            </h3>
+            <p>
+              Les couleurs créent une atmosphère, mais ne transmettent jamais
+              seules une information.
+            </p>
+            <p>
+              Chaque état visuel est également associé à une forme, un nom, une
+              intensité, une expression et un texte explicatif.
+            </p>
+            <p>
+              Ce choix rejoint le critère WCAG selon lequel la couleur ne doit
+              pas constituer le seul moyen visuel de transmettre une information
+              ou d’identifier une action.
+              <a
+                class="source-link source-link--dark"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter la source 9, critère WCAG sur l’usage de la couleur"
+                >[9] ↗</a
+              >
+            </p>
+          </div>
+          <div class="color-accessibility-demo">
+            <div>
+              <i class="color-state color-state--one"></i
+              ><strong>Sérénité</strong><span>Intensité 02 · forme souple</span>
+            </div>
+            <div>
+              <i class="color-state color-state--two"></i
+              ><strong>Énergie</strong><span>Intensité 05 · forme ample</span>
+            </div>
+            <div>
+              <i class="color-state color-state--three"></i
+              ><strong>Curiosité</strong
+              ><span>Intensité 03 · forme mouvante</span>
+            </div>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 07 EMOTIONAL COLORS -->
+
+        <!-- CONTENT START: SECTION 07 MATERIALS -->
+        <article class="art-feature art-feature--materials">
+          <div class="art-feature-copy">
+            <span>03</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Matières et dégradés
+            </p>
+            <h3>
+              Composer un ressenti plutôt que sélectionner une catégorie
+              binaire.
+            </h3>
+            <p>
+              Les dégradés, textures et effets de grain permettent de
+              représenter le ressenti comme une combinaison de caractéristiques
+              plutôt que comme une catégorie totalement binaire.
+            </p>
+            <p>La matière apporte une sensation supplémentaire à la forme.</p>
+          </div>
+          <ul class="material-list">
+            <li><i></i><span>Douceur</span></li>
+            <li><i></i><span>Densité</span></li>
+            <li><i></i><span>Diffusion</span></li>
+            <li><i></i><span>Fluidité</span></li>
+            <li><i></i><span>Rugosité</span></li>
+          </ul>
+        </article>
+        <!-- CONTENT END: SECTION 07 MATERIALS -->
+
+        <!-- CONTENT START: SECTION 07 EDITORIAL INTERFACE -->
+        <article class="editorial-interface">
+          <div>
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Interface éditoriale
+            </p>
+          </div>
+          <p>
+            Les grandes typographies, les compositions aérées, les surfaces
+            claires et les cartes culturelles rapprochent Tempo de l’univers des
+            magazines contemporains et des plateformes éditoriales.
+          </p>
+        </article>
+        <!-- CONTENT END: SECTION 07 EDITORIAL INTERFACE -->
+
+        <!-- CONTENT START: SECTION 07 AVOID -->
+        <div class="art-avoid">
+          <p class="copy-placeholder copy-placeholder--eyebrow">
+            Ce que Tempo évite
+          </p>
+          <ul>
+            <li>Les codes médicaux.</li>
+            <li>Les promesses thérapeutiques.</li>
+            <li>Le diagnostic émotionnel.</li>
+            <li>Les interfaces froides.</li>
+            <li>Le ton infantilisant.</li>
+            <li>Les emojis système comme identité principale.</li>
+            <li>Les recommandations sans justification.</li>
+            <li>Les informations transmises uniquement par la couleur.</li>
+          </ul>
+        </div>
+        <!-- CONTENT END: SECTION 07 AVOID -->
+      </section>
+
+      <section
+        id="chapter-08"
+        class="chapter system"
+        data-chapter="08"
+        aria-labelledby="title-08"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">08 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 08 TITLE -->
+          <h2 id="title-08" class="copy-placeholder copy-placeholder--title">
+            Un langage visuel commun à l’application et à Tempo Studio
+          </h2>
+          <!-- CONTENT END: SECTION 08 TITLE -->
+        </div>
+        <div class="system-layout">
+          <div class="system-content">
+            <!-- CONTENT START: SECTION 08 PALETTE -->
+            <article class="system-section system-palette">
+              <div class="system-section-heading">
+                <span>01</span>
+                <h3>Palette principale</h3>
+              </div>
+              <div
+                class="palette-table"
+                role="table"
+                aria-label="Palette principale Tempo"
+              >
+                <div class="palette-row palette-row--head" role="row">
+                  <span role="columnheader">Usage</span
+                  ><span role="columnheader">Couleur</span
+                  ><span role="columnheader">Code</span>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #f7f2e8"></i><span>Fond principal</span
+                  ><strong>Crème</strong><code>#F7F2E8</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #fffdf8"></i><span>Surface</span
+                  ><strong>Blanc chaud</strong><code>#FFFDF8</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #231f1b"></i><span>Texte principal</span
+                  ><strong>Brun noir</strong><code>#231F1B</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #716a61"></i><span>Texte secondaire</span
+                  ><strong>Gris brun</strong><code>#716A61</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #ff8a67"></i><span>Accent chaud</span
+                  ><strong>Corail</strong><code>#FF8A67</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #ffa178"></i><span>Accent chaud</span
+                  ><strong>Pêche</strong><code>#FFA178</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #ffd85a"></i><span>Énergie</span
+                  ><strong>Jaune</strong><code>#FFD85A</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #a9c878"></i><span>Calme</span
+                  ><strong>Vert sauge</strong><code>#A9C878</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #c9a8f4"></i><span>Sensibilité</span
+                  ><strong>Lavande</strong><code>#C9A8F4</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #9c82df"></i><span>Créativité</span
+                  ><strong>Violet</strong><code>#9C82DF</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #748dd5"></i><span>Introspection</span
+                  ><strong>Bleu pervenche</strong><code>#748DD5</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #425d9c"></i><span>Contraste</span
+                  ><strong>Bleu profond</strong><code>#425D9C</code>
+                </div>
+                <div class="palette-row" role="row">
+                  <i style="--swatch: #e9b5cc"></i><span>Douceur</span
+                  ><strong>Rose poudré</strong><code>#E9B5CC</code>
+                </div>
+              </div>
+              <p class="system-caption">
+                Cette palette reprend le système visuel défini pour
+                l’application et le dashboard.
+              </p>
+            </article>
+            <!-- CONTENT END: SECTION 08 PALETTE -->
+
+            <!-- CONTENT START: SECTION 08 TYPOGRAPHY -->
+            <article class="system-section">
+              <div class="system-section-heading">
+                <span>02</span>
+                <h3>Typographies</h3>
+              </div>
+              <div class="type-cards">
+                <div>
+                  <small>Titres et emphase</small><strong>Manrope</strong
+                  ><b>Aa</b>
+                  <p>
+                    Utilisée pour les titres de pages, les noms des profils
+                    Tempo, les boutons principaux, les grands chiffres et les
+                    informations mises en avant.
+                  </p>
+                </div>
+                <div>
+                  <small>Lecture et interface</small><strong>Inter</strong
+                  ><b>Aa</b>
+                  <p>
+                    Utilisée pour les descriptions, les informations pratiques,
+                    les filtres, les témoignages fictifs du prototype et les
+                    textes d’interface.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- CONTENT END: SECTION 08 TYPOGRAPHY -->
+
+            <!-- CONTENT START: SECTION 08 COMPONENTS -->
+            <article class="system-section">
+              <div class="system-section-heading">
+                <span>03</span>
+                <h3>Composants principaux</h3>
+              </div>
+              <div class="component-catalog component-catalog--real">
+                <div class="system-block">
+                  <h4>Boutons et états</h4>
+                  <div class="button-demo">
+                    <button class="tempo-button">
+                      <span>Bouton principal</span><i>→</i></button
+                    ><button class="tempo-button tempo-button--ghost">
+                      Bouton secondaire</button
+                    ><button
+                      class="round-button"
+                      aria-label="Bouton icône exemple"
+                    >
+                      ♡</button
+                    ><button class="tempo-button" disabled>
+                      <span>Désactivé</span><i>→</i>
+                    </button>
+                  </div>
+                </div>
+                <div class="system-block">
+                  <h4>Filtres</h4>
+                  <div class="filter-demo">
+                    <button>À proximité</button
+                    ><button class="active">Pour mon Tempo</button
+                    ><button>Ce soir</button>
+                  </div>
+                  <div class="compatibility-badge">92 % compatible</div>
+                </div>
+                <div class="system-block">
+                  <h4>Formes et intensité</h4>
+                  <div class="emotion-demo">
+                    <i class="mini-blob one"><span class="face">••</span></i
+                    ><i class="mini-blob two"><span class="face">••</span></i
+                    ><i class="mini-blob three"><span class="face">••</span></i>
+                  </div>
+                  <div
+                    class="intensity-demo"
+                    aria-label="Sélecteur d’intensité"
+                  >
+                    <i></i><i></i><i class="active"></i><i></i><i></i>
+                  </div>
+                </div>
+                <div class="system-block">
+                  <h4>Carte événement</h4>
+                  <div class="sample-card">
+                    <span class="sample-art"></span>
+                    <div>
+                      <small>Pour votre Tempo</small
+                      ><strong>Événement culturel</strong>
+                      <p>
+                        Informations pratiques et justification personnalisée.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="system-block">
+                  <h4>Dessin et modelage</h4>
+                  <div class="tool-demo">
+                    <button>✎<span>Crayon</span></button
+                    ><button>◌<span>Modeler</span></button
+                    ><button>↶<span>Annuler</span></button>
+                  </div>
+                </div>
+                <div class="system-block">
+                  <h4>Navigation</h4>
+                  <div class="nav-demo">
+                    <span class="active">⌂<small>Accueil</small></span
+                    ><span>⌕<small>Explorer</small></span
+                    ><span>♡<small>Favoris</small></span
+                    ><span>○<small>Profil</small></span>
+                  </div>
+                </div>
+                <div class="system-block component-states">
+                  <h4>États système</h4>
+                  <div class="empty-state">
+                    ○ <span>Aucune sortie enregistrée</span>
+                  </div>
+                  <div class="error-state">
+                    ! <span>Une erreur est survenue. Réessayer.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- CONTENT END: SECTION 08 COMPONENTS -->
+          </div>
+          <aside class="system-figma">
+            <div
+              class="media-placeholder ratio-dashboard"
+              data-replacement="assets/images/design-system-figma.png"
+            >
+              <span class="media-placeholder__label"
+                >[CAPTURE FIGMA À AJOUTER]</span
+              ><span class="media-placeholder__path"
+                >assets/images/design-system-figma.png</span
+              >
+            </div>
+          </aside>
+        </div>
+        <!-- CONTENT START: SECTION 08 ACCESSIBILITY -->
+        <article class="system-accessibility">
+          <div>
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Principes d’accessibilité
+            </p>
+            <h3>
+              Une expression sensible qui reste utilisable et compréhensible.
+            </h3>
+          </div>
+          <ul>
+            <li>
+              Les principales zones tactiles visent une surface d’au moins 44 ×
+              44 points, conformément aux recommandations d’Apple pour permettre
+              une activation précise au doigt.
+              <a
+                class="source-link"
+                href="https://developer.apple.com/design/tips/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter la source 8, recommandations de design Apple"
+                >[8] ↗</a
+              >
+            </li>
+            <li>
+              Pour le Web, la taille et l’espacement des cibles tiennent
+              également compte du critère WCAG 2.2 relatif à la taille minimale
+              des éléments interactifs.
+            </li>
+            <li>
+              La couleur n’est pas utilisée comme seul moyen de transmettre une
+              information.
+            </li>
+            <li>
+              Les états actifs, focus, désactivés et erreur disposent de signes
+              visuels distincts.
+            </li>
+            <li>
+              Les formulations ne présentent jamais l’interprétation proposée
+              par Tempo comme médicale ou thérapeutique.
+            </li>
+          </ul>
+        </article>
+        <!-- CONTENT END: SECTION 08 ACCESSIBILITY -->
+
+        <!-- CONTENT START: SECTION 08 CONSISTENCY -->
+        <article class="system-consistency">
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Cohérence entre les interfaces
+            </p>
+            <p>Le même système visuel relie&nbsp;:</p>
+            <ul>
+              <li>l’onboarding</li>
+              <li>l’interface générative</li>
+              <li>les recommandations</li>
+              <li>les fiches événement</li>
+              <li>Tempo Studio</li>
+              <li>le Web Design Document</li>
+            </ul>
+          </div>
+          <p>
+            Tempo Studio reprend les couleurs, les formes organiques et les
+            dégradés de l’application, mais utilise une grille plus structurée
+            afin de faciliter la lecture des données.
+          </p>
+        </article>
+        <!-- CONTENT END: SECTION 08 CONSISTENCY -->
+      </section>
+
+      <section
+        id="chapter-09"
+        class="chapter generative"
+        data-chapter="09"
+        aria-labelledby="title-09"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">09 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 09 TITLE -->
+          <h2 id="title-09" class="copy-placeholder copy-placeholder--title">
+            Construire une représentation sensible de son état du moment
+          </h2>
+          <!-- CONTENT END: SECTION 09 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 09 PRINCIPLE -->
+        <article class="generative-principle">
+          <div>
+            <span>01</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">Principe</p>
+            <h3>
+              L’interface générative constitue le cœur distinctif de Tempo.
+            </h3>
+          </div>
+          <div>
+            <p>
+              Plutôt que de demander à l’utilisateur de définir entièrement son
+              état à travers une liste de mots, elle lui permet de construire
+              une représentation visuelle et sonore.
+            </p>
+            <p>
+              Cette direction s’inspire notamment de travaux utilisant des
+              représentations pictographiques et non verbales pour permettre
+              l’auto-évaluation d’un état affectif. Le Self-Assessment Manikin,
+              par exemple, représente visuellement des dimensions comme le
+              plaisir, l’activation et le sentiment de contrôle. Tempo ne
+              reprend cependant pas cet outil comme échelle scientifique&nbsp;:
+              il en retient uniquement l’intérêt d’une expression visuelle
+              simple.
+              <a
+                class="source-link"
+                href="https://pubmed.ncbi.nlm.nih.gov/7962581/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter la source 14, Self-Assessment Manikin"
+                >[14] ↗</a
+              >
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 09 PRINCIPLE -->
+
+        <!-- CONTENT START: SECTION 09 DIMENSIONS -->
+        <div class="generative-dimensions">
+          <div class="generative-dimensions-heading">
+            <span>02</span>
+            <h3>Dimensions proposées</h3>
+          </div>
+          <div class="dimension-grid">
+            <article>
+              <b>01</b><i class="dimension-icon dimension-icon--color"></i>
+              <h4>Couleur</h4>
+              <p>
+                L’utilisateur choisit une palette correspondant à l’atmosphère
+                qu’il souhaite donner à sa création.
+              </p>
+            </article>
+            <article>
+              <b>02</b><i class="dimension-icon dimension-icon--shape"></i>
+              <h4>Forme</h4>
+              <p>
+                Il sélectionne une base géométrique ou organique, puis peut la
+                modeler. La forme choisie conserve ses proportions principales.
+              </p>
+            </article>
+            <article>
+              <b>03</b><i class="dimension-icon dimension-icon--texture"></i>
+              <h4>Matière</h4>
+              <p>
+                La texture ajoute une qualité visuelle au ressenti&nbsp;: douce,
+                granuleuse ou dense.
+              </p>
+            </article>
+            <article>
+              <b>04</b><i class="dimension-icon dimension-icon--intensity"></i>
+              <h4>Intensité</h4>
+              <p>
+                L’intensité permet de préciser le niveau de l’émotion
+                représentée, de faible à moyen ou très fort.
+              </p>
+            </article>
+            <article>
+              <b>05</b><i class="dimension-icon dimension-icon--face">••</i>
+              <h4>Visage</h4>
+              <p>
+                Une expression minimaliste peut compléter la représentation.
+              </p>
+            </article>
+            <article>
+              <b>06</b><i class="dimension-icon dimension-icon--sound">∿</i>
+              <h4>Son</h4>
+              <p>L’utilisateur peut associer un univers sonore à son Tempo.</p>
+            </article>
+            <article>
+              <b>07</b><i class="dimension-icon dimension-icon--draw">⌁</i>
+              <h4>Dessin libre</h4>
+              <p>
+                Un outil de dessin permet d’ajouter des traits personnels.
+                Plusieurs tailles de mines sont proposées afin de conserver un
+                tracé précis sur un petit écran.
+              </p>
+            </article>
+            <article>
+              <b>08</b><i class="dimension-icon dimension-icon--model">↔</i>
+              <h4>Modelage</h4>
+              <p>
+                Le mode de modelage permet de modifier les contours de la forme
+                sans perdre son identité initiale.
+              </p>
+            </article>
+          </div>
+        </div>
+        <!-- CONTENT END: SECTION 09 DIMENSIONS -->
+
+        <!-- CONTENT START: SECTION 09 ANNOTATED INTERFACE -->
+        <div class="generative-layout">
+          <div
+            class="media-placeholder has-media ratio-wide main-capture"
+            data-replacement="assets/images/generative-profile.png"
+          >
+            <img class="media-asset" src="assets/images/generative-profile.png" alt="Profil Tempo généré à partir d’une création émotionnelle" loading="lazy" /><i class="annotation-pin pin-1">01</i
+            ><i class="annotation-pin pin-2">02</i
+            ><i class="annotation-pin pin-3">03</i
+            ><i class="annotation-pin pin-4">04</i
+            ><i class="annotation-pin pin-5">05</i>
+          </div>
+          <aside class="generative-aside">
+            <div
+              class="demo-blob"
+              aria-label="Démonstration décorative d’une forme générative"
+            >
+              <span class="blob-face"><i></i><i></i><b></b></span>
+            </div>
+            <ol>
+              <li>
+                <b>01</b
+                ><span
+                  ><strong>Prévisualisation permanente</strong>Chaque
+                  transformation est visible en temps réel.</span
+                >
+              </li>
+              <li>
+                <b>02</b
+                ><span
+                  ><strong>Navigation par dimensions</strong>Une seule famille
+                  de réglages est ouverte à la fois.</span
+                >
+              </li>
+              <li>
+                <b>03</b
+                ><span
+                  ><strong>Dessin ou modelage</strong>Deux modes permettent une
+                  expression libre ou guidée.</span
+                >
+              </li>
+              <li>
+                <b>04</b
+                ><span
+                  ><strong>Fidélité des formes</strong>La forme conserve les
+                  proportions correspondant au choix de l’utilisateur.</span
+                >
+              </li>
+              <li>
+                <b>05</b
+                ><span
+                  ><strong>Génération du profil</strong>La création devient un
+                  profil Tempo utilisé par le prototype pour organiser les
+                  recommandations.</span
+                >
+              </li>
+            </ol>
+          </aside>
+        </div>
+        <!-- CONTENT END: SECTION 09 ANNOTATED INTERFACE -->
+
+        <!-- CONTENT START: SECTION 09 FEEDBACK AND TOOLS -->
+        <div class="generative-behavior">
+          <article>
+            <span>03</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Feedback en temps réel
+            </p>
+            <h3>Voir immédiatement l’effet de chaque action.</h3>
+            <p>La zone de création reste visible pendant les réglages.</p>
+            <p>
+              Chaque changement apparaît immédiatement afin que l’utilisateur
+              comprenne l’effet de son action.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Organisation des outils
+            </p>
+            <h3>Réduire la densité sans limiter les possibilités.</h3>
+            <p>
+              Une seule famille de réglages est ouverte à la fois afin de
+              limiter la densité d’information.
+            </p>
+            <p>
+              Les outils de dessin sont masqués pendant le modelage. Les outils
+              de modelage sont masqués pendant le dessin libre.
+            </p>
+          </article>
+        </div>
+        <!-- CONTENT END: SECTION 09 FEEDBACK AND TOOLS -->
+
+        <!-- CONTENT START: SECTION 09 INTERPRETATION -->
+        <article class="generative-interpretation">
+          <div>
+            <span>05</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Interprétation
+            </p>
+            <h3>Après validation, Tempo présente notamment&nbsp;:</h3>
+          </div>
+          <ul>
+            <li>l’expression dominante</li>
+            <li>l’intensité</li>
+            <li>la palette</li>
+            <li>la forme</li>
+            <li>la matière</li>
+            <li>l’énergie générale</li>
+          </ul>
+        </article>
+        <!-- CONTENT END: SECTION 09 INTERPRETATION -->
+
+        <div class="zoom-row">
+          <div
+            class="media-placeholder has-media ratio-square"
+            data-replacement="assets/images/generative-profile.png"
+          >
+            <img class="media-asset" src="assets/images/generative-profile.png" alt="Détail de la création du jour et de son profil Tempo" loading="lazy" />
+          </div>
+          <div
+            class="media-placeholder has-media ratio-square"
+            data-replacement="assets/images/generative-interpretation.png"
+          >
+            <img class="media-asset" src="assets/images/generative-interpretation.png" alt="Interprétation créative du profil Tempo et justification des recommandations" loading="lazy" />
+          </div>
+          <p>
+            <strong>Mention méthodologique</strong>Cette lecture constitue une
+            interprétation créative destinée à personnaliser les recommandations
+            culturelles. Elle ne constitue ni une évaluation psychologique ni un
+            diagnostic.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="chapter-10"
+        class="chapter prototype"
+        data-chapter="10"
+        aria-labelledby="title-10"
+      >
+        <div class="chapter-heading">
+          <p class="chapter-index">10 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 10 TITLE -->
+          <h2 id="title-10" class="copy-placeholder copy-placeholder--title">
+            Du ressenti à la sortie culturelle
+          </h2>
+          <!-- CONTENT END: SECTION 10 TITLE -->
+        </div>
+        <div class="prototype-layout">
+          <div class="phone" aria-label="Cadre iPhone 15 du prototype">
+            <i class="phone-button volume-up"></i
+            ><i class="phone-button volume-down"></i
+            ><i class="phone-button power"></i>
+            <div class="phone-screen">
+              <span class="dynamic-island"></span
+              ><video
+                id="tempo-prototype-video"
+                playsinline
+                muted
+                loop
+                controls
+                poster="assets/images/prototype-poster.png"
+              >
+                <source
+                  src="assets/videos/tempo-prototype.m4v"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="video-fallback">
+                <img src="assets/images/prototype-poster.png" alt="Écran d’accueil du prototype Tempo" />
+                <span>La vidéo du prototype n’est pas prise en charge par ce navigateur.</span
+                ><small>assets/videos/tempo-prototype.m4v</small>
+              </div>
+            </div>
+          </div>
+          <div class="prototype-copy">
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Parcours couvert
+            </p>
+            <h3 class="copy-placeholder copy-placeholder--statement">
+              De la création émotionnelle à une action culturelle finale.
+            </h3>
+            <p class="copy-placeholder copy-placeholder--body">
+              Le prototype mobile couvre le parcours allant de la création
+              émotionnelle à une action culturelle finale.
+            </p>
+            <ol class="prototype-steps">
+              <li><b>01</b><span>Composer une émotion.</span></li>
+              <li><b>02</b><span>Générer un profil Tempo.</span></li>
+              <li><b>03</b><span>Comprendre son interprétation.</span></li>
+              <li><b>04</b><span>Recevoir plusieurs recommandations.</span></li>
+              <li><b>05</b><span>Consulter une activité.</span></li>
+              <li>
+                <b>06</b
+                ><span>Sauvegarder, partager ou choisir une sortie.</span>
+              </li>
+            </ol>
+            <a
+              class="tempo-button"
+              href="https://ndeelaa.github.io/Tempo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>Ouvrir le prototype</span><i>↗</i></a
+            >
+          </div>
+        </div>
+        <!-- CONTENT START: SECTION 10 RECOMMENDATIONS -->
+        <article class="recommendation-system">
+          <div class="recommendation-system-copy">
+            <span>01</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Recommandations personnalisées
+            </p>
+            <h3>
+              Plusieurs expériences culturelles après la génération du profil.
+            </h3>
+            <p>
+              Après la génération du profil, Tempo propose plusieurs expériences
+              culturelles.
+            </p>
+            <p>
+              Les événements, lieux, prix et niveaux de compatibilité présentés
+              dans le prototype sont fictifs ou simulés.
+            </p>
+          </div>
+          <div class="recommendation-anatomy">
+            <div class="recommendation-card-demo">
+              <span class="recommendation-visual"></span>
+              <div>
+                <small>92 % compatible</small>
+                <h4>Expérience culturelle</h4>
+                <p>Lieu · Horaire · Prix · Distance</p>
+                <aside>Pourquoi cette sortie correspond à votre Tempo</aside>
+              </div>
+            </div>
+            <ul>
+              <li>un visuel</li>
+              <li>un titre</li>
+              <li>un lieu</li>
+              <li>un horaire</li>
+              <li>un prix</li>
+              <li>une distance</li>
+              <li>un niveau de compatibilité</li>
+              <li>une explication personnalisée</li>
+            </ul>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 10 RECOMMENDATIONS -->
+
+        <!-- CONTENT START: SECTION 10 EXPLAINABILITY -->
+        <article class="prototype-explainability">
+          <div>
+            <span>02</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Explicabilité
+            </p>
+            <h3>
+              Rendre compréhensible la logique simulée de la recommandation.
+            </h3>
+          </div>
+          <div>
+            <p>
+              La section «&nbsp;Pourquoi cette sortie correspond à votre
+              Tempo&nbsp;» établit une relation entre les caractéristiques de la
+              création et l’ambiance de l’activité, son rythme, son intensité
+              sociale et son niveau de découverte.
+            </p>
+            <p>
+              Les travaux sur les systèmes de recommandation explicables
+              montrent que répondre à la question «&nbsp;pourquoi cet élément
+              est-il recommandé&nbsp;?&nbsp;» peut améliorer la transparence et
+              aider l’utilisateur à comprendre la logique du système.
+              <a
+                class="source-link"
+                href="https://arxiv.org/abs/1804.11192"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter la source 7 sur les systèmes de recommandation explicables"
+                >[7] ↗</a
+              >
+            </p>
+            <p class="method-note">
+              Dans Tempo, cette explication ne décrit pas un algorithme
+              réellement entraîné. Elle rend intelligible la logique simulée du
+              prototype.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 10 EXPLAINABILITY -->
+
+        <div class="prototype-content-grid">
+          <!-- CONTENT START: SECTION 10 EVENT -->
+          <article>
+            <span>03</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Consultation d’un événement
+            </p>
+            <h3>Une fiche détaillée et hiérarchisée.</h3>
+            <p>La fiche détaillée rassemble&nbsp;:</p>
+            <ul>
+              <li>les informations pratiques</li>
+              <li>la description de l’expérience</li>
+              <li>les ressentis envisagés, sans promesse thérapeutique</li>
+              <li>des témoignages fictifs simulant une preuve sociale</li>
+              <li>les actions de sauvegarde, partage ou sélection</li>
+            </ul>
+          </article>
+          <!-- CONTENT END: SECTION 10 EVENT -->
+          <!-- CONTENT START: SECTION 10 FINAL ACTION -->
+          <article class="prototype-final-action">
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Action finale
+            </p>
+            <h3>
+              Le prototype conduit l’utilisateur jusqu’à une action principale.
+            </h3>
+            <button type="button" class="tempo-button">
+              <span>Choisir cette sortie</span><i>→</i>
+            </button>
+            <p>
+              Une confirmation clôture ensuite le parcours et permet de
+              retrouver l’événement dans l’application.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 10 FINAL ACTION -->
+        </div>
+
+        <!-- CONTENT START: SECTION 10 UX PRINCIPLES -->
+        <article class="prototype-principles">
+          <div class="prototype-principles-heading">
+            <span>05</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Principes UX
+            </p>
+            <h3>Cinq repères pour guider la décision.</h3>
+          </div>
+          <ol>
+            <li>
+              <b>01</b><strong>Compatibilité visible</strong>
+              <p>
+                Le pourcentage permet de comparer les différentes propositions
+                du prototype.
+              </p>
+            </li>
+            <li>
+              <b>02</b><strong>Explication personnalisée</strong>
+              <p>La logique de la recommandation est explicitée.</p>
+            </li>
+            <li>
+              <b>03</b><strong>Filtres secondaires</strong>
+              <p>
+                L’utilisateur conserve la possibilité de modifier les résultats.
+              </p>
+            </li>
+            <li>
+              <b>04</b><strong>Informations hiérarchisées</strong>
+              <p>
+                La date, le prix, la distance et le lieu restent rapidement
+                identifiables.
+              </p>
+            </li>
+            <li>
+              <b>05</b><strong>Action principale</strong>
+              <p>
+                Le bouton principal hiérarchise clairement la prochaine étape.
+              </p>
+            </li>
+          </ol>
+        </article>
+        <!-- CONTENT END: SECTION 10 UX PRINCIPLES -->
+
+        <!-- CONTENT START: SECTION 10 PROTOTYPE LINK -->
+        <div class="prototype-cta">
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Prototype interactif
+            </p>
+            <h3>Consulter le prototype Tempo</h3>
+          </div>
+          <a
+            class="tempo-button"
+            href="https://ndeelaa.github.io/Tempo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>Ouvrir le prototype</span><i>↗</i></a
+          >
+        </div>
+        <!-- CONTENT END: SECTION 10 PROTOTYPE LINK -->
+      </section>
+
+      <section
+        id="chapter-11"
+        class="chapter dashboard"
+        data-chapter="11"
+        aria-labelledby="title-11"
+      >
+        <div class="data-shapes" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="chapter-heading">
+          <p class="chapter-index">11 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 11 TITLE -->
+          <h2 id="title-11" class="copy-placeholder copy-placeholder--title">
+            Observer les tendances sans quitter l’univers de Tempo
+          </h2>
+          <!-- CONTENT END: SECTION 11 TITLE -->
+        </div>
+        <div
+          class="media-placeholder has-media ratio-dashboard dashboard-main"
+          data-replacement="assets/images/dashboard/dashboard-overview.png"
+        >
+          <img class="media-asset" src="assets/images/dashboard/dashboard-overview.png" alt="Vue globale de l’interface Tempo Studio" loading="lazy" />
+        </div>
+        <!-- CONTENT START: SECTION 11 PRESENTATION -->
+        <article class="studio-presentation">
+          <div>
+            <span>01</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Présentation
+            </p>
+            <h3>Une interface desktop distincte de l’application mobile.</h3>
+          </div>
+          <div>
+            <p>
+              Tempo Studio est une interface desktop distincte de l’application
+              mobile.
+            </p>
+            <p>
+              Elle est destinée à une équipe éditoriale fictive chargée
+              d’observer les tendances d’usage du service, la performance des
+              catégories culturelles et leur répartition géographique.
+            </p>
+            <p class="studio-warning">
+              Toutes les données présentées dans le dashboard sont fictives.
+              Elles ont été produites uniquement pour démontrer la conception et
+              les principes de datavisualisation.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 11 PRESENTATION -->
+
+        <div class="studio-visualizations">
+          <!-- CONTENT START: SECTION 11 VISUALIZATION 01 -->
+          <article class="studio-viz studio-viz--timeline">
+            <div
+              class="media-placeholder has-media ratio-landscape"
+              data-replacement="assets/images/dashboard/data01.png"
+            >
+              <img class="media-asset" src="assets/images/dashboard/data01.png" alt="Datavisualisation des humeurs dominantes dans le temps" loading="lazy" />
+            </div>
+            <div class="studio-viz-copy">
+              <span>01 / Émotions</span>
+              <h3>Humeurs dominantes dans le temps</h3>
+              <p>
+                Une visualisation temporelle représente l’évolution de plusieurs
+                profils Tempo&nbsp;:
+              </p>
+              <ul class="studio-moods">
+                <li><i></i>Curiosité</li>
+                <li><i></i>Enthousiasme</li>
+                <li><i></i>Joie</li>
+                <li><i></i>Sérénité</li>
+              </ul>
+              <p>
+                Dans le scénario fictif, elle permet d’identifier les moments où
+                certains profils deviennent plus présents.
+              </p>
+            </div>
+          </article>
+          <!-- CONTENT END: SECTION 11 VISUALIZATION 01 -->
+          <!-- CONTENT START: SECTION 11 VISUALIZATION 02 -->
+          <article class="studio-viz studio-viz--map">
+            <div
+              class="media-placeholder has-media ratio-landscape"
+              data-replacement="assets/images/dashboard/data02.png"
+            >
+              <img class="media-asset" src="assets/images/dashboard/data02.png" alt="Datavisualisation des zones culturelles actives" loading="lazy" />
+            </div>
+            <div class="studio-viz-copy">
+              <span>02 / Territoires</span>
+              <h3>Zones culturelles actives</h3>
+              <p>
+                Une carte stylisée représente l’activité par zone géographique.
+              </p>
+              <p>L’encodage visuel repose sur&nbsp;:</p>
+              <ul>
+                <li>
+                  la taille de la forme pour représenter le volume fictif de
+                  réservations
+                </li>
+                <li>la couleur pour représenter l’humeur dominante</li>
+                <li>
+                  une infobulle indiquant la zone, la catégorie principale et le
+                  volume simulé
+                </li>
+              </ul>
+            </div>
+          </article>
+          <!-- CONTENT END: SECTION 11 VISUALIZATION 02 -->
+          <!-- CONTENT START: SECTION 11 VISUALIZATION 03 -->
+          <article class="studio-viz studio-viz--performance">
+            <div
+              class="media-placeholder has-media ratio-landscape"
+              data-replacement="assets/images/dashboard/data03.png"
+            >
+              <img class="media-asset" src="assets/images/dashboard/data03.png" alt="Datavisualisation de la performance des catégories culturelles" loading="lazy" />
+            </div>
+            <div class="studio-viz-copy">
+              <span>03 / Formats</span>
+              <h3>Performance culturelle</h3>
+              <p>
+                Une visualisation comparative présente les consultations, les
+                sauvegardes, les réservations et le taux de conversion.
+              </p>
+              <p>Elle compare plusieurs catégories&nbsp;:</p>
+              <ul class="studio-categories">
+                <li>cinéma</li>
+                <li>exposition</li>
+                <li>concert</li>
+                <li>lecture sonore</li>
+                <li>installation immersive</li>
+                <li>théâtre</li>
+              </ul>
+            </div>
+          </article>
+          <!-- CONTENT END: SECTION 11 VISUALIZATION 03 -->
+        </div>
+
+        <!-- CONTENT START: SECTION 11 FILTERS -->
+        <article class="studio-filters">
+          <div
+            class="media-placeholder has-media ratio-landscape"
+            data-replacement="assets/images/dashboard/filtreactif.png"
+          >
+            <img class="media-asset" src="assets/images/dashboard/filtreactif.png" alt="Vue de Tempo Studio avec les filtres éditoriaux actifs" loading="lazy" />
+          </div>
+          <div>
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">Filtres</p>
+            <h3>Adapter la lecture au contexte éditorial.</h3>
+            <p>Le dashboard peut être filtré par&nbsp;:</p>
+            <ul>
+              <li>ville</li>
+              <li>période</li>
+              <li>catégorie</li>
+              <li>tranche horaire</li>
+              <li>humeur dominante</li>
+            </ul>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 11 FILTERS -->
+
+        <div class="studio-foundations">
+          <!-- CONTENT START: SECTION 11 VISUAL CONSISTENCY -->
+          <article>
+            <span>05</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Cohérence visuelle
+            </p>
+            <p>
+              Tempo Studio reprend la palette de l’application, les formes
+              organiques, les surfaces crème, les dégradés, la typographie et
+              les effets de transparence.
+            </p>
+            <p>
+              Sa mise en page est toutefois plus structurée afin de faciliter la
+              lecture rapide des données.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 11 VISUAL CONSISTENCY -->
+          <!-- CONTENT START: SECTION 11 TECHNOLOGY -->
+          <article>
+            <span>06</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Technologie
+            </p>
+            <p>
+              Les datavisualisations ont été développées pour le Web. D3.js
+              permet de lier des données aux éléments du Document Object Model
+              et de produire des représentations graphiques personnalisées.
+            </p>
+          </article>
+          <!-- CONTENT END: SECTION 11 TECHNOLOGY -->
+        </div>
+
+        <!-- CONTENT START: SECTION 11 METHODOLOGY -->
+        <aside class="studio-methodology">
+          <strong>Données fictives</strong>
+          <div>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Mention méthodologique
+            </p>
+            <p>
+              Les données présentées dans Tempo Studio sont fictives et ont été
+              créées dans le cadre du prototype. Elles ne décrivent pas des
+              utilisateurs ou des performances réels.
+            </p>
+          </div>
+        </aside>
+        <!-- CONTENT END: SECTION 11 METHODOLOGY -->
+      </section>
+
+      <section
+        id="chapter-12"
+        class="chapter conclusion"
+        data-chapter="12"
+        aria-labelledby="title-12"
+      >
+        <div class="closing-blobs" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </div>
+        <div class="chapter-heading">
+          <p class="chapter-index">12 <span>/ 12</span></p>
+          <!-- CONTENT START: SECTION 12 TITLE -->
+          <h2 id="title-12" class="copy-placeholder copy-placeholder--title">
+            Transformer une émotion en possibilité de découverte
+          </h2>
+          <!-- CONTENT END: SECTION 12 TITLE -->
+        </div>
+        <!-- CONTENT START: SECTION 12 CONCLUSION -->
+        <article class="conclusion-intro">
+          <div>
+            <span>01</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">Conclusion</p>
+            <h3>Tempo propose une autre manière d’accéder à la culture.</h3>
+          </div>
+          <div>
+            <p>
+              L’application ne demande pas uniquement à l’utilisateur ce qu’il
+              aime ou ce qu’il recherche. Elle lui permet de partir de son
+              ressenti actuel et de le transformer en création visuelle.
+            </p>
+            <p>
+              Cette création devient un langage de médiation entre l’utilisateur
+              et la logique de recommandation simulée.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 12 CONCLUSION -->
+
+        <!-- CONTENT START: SECTION 12 PRINCIPLES -->
+        <div class="principles">
+          <article>
+            <b>01</b>
+            <h3>Exprimer librement une émotion</h3>
+            <p>
+              L’utilisateur construit une représentation visuelle et sonore de
+              son ressenti.
+            </p>
+          </article>
+          <article>
+            <b>02</b>
+            <h3>Comprendre son interprétation créative</h3>
+            <p>
+              Tempo explique les principales caractéristiques relevées dans la
+              création, tout en précisant qu’il ne s’agit pas d’une analyse
+              psychologique.
+            </p>
+          </article>
+          <article>
+            <b>03</b>
+            <h3>Recevoir une recommandation culturelle justifiée</h3>
+            <p>
+              Les activités proposées sont accompagnées d’une explication
+              permettant de comprendre la logique du rapprochement.
+            </p>
+          </article>
+        </div>
+        <!-- CONTENT END: SECTION 12 PRINCIPLES -->
+
+        <!-- CONTENT START: SECTION 12 ECOSYSTEM -->
+        <article class="conclusion-ecosystem">
+          <div>
+            <span>02</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Un écosystème cohérent
+            </p>
+            <h3>
+              L’interface générative, le prototype mobile, Tempo Studio et le
+              Web Design Document forment un même ensemble.
+            </h3>
+          </div>
+          <ul>
+            <li>
+              <b>Application</b
+              ><span
+                >L’application accompagne l’utilisateur dans sa décision.</span
+              >
+            </li>
+            <li>
+              <b>Tempo Studio</b
+              ><span
+                >Le dashboard aide une équipe éditoriale fictive à observer des
+                tendances simulées.</span
+              >
+            </li>
+            <li>
+              <b>Web Design Document</b
+              ><span
+                >Le document présente les choix de conception et leurs
+                limites.</span
+              >
+            </li>
+          </ul>
+        </article>
+        <!-- CONTENT END: SECTION 12 ECOSYSTEM -->
+
+        <div class="conclusion-development">
+          <!-- CONTENT START: SECTION 12 LIMITS -->
+          <article class="conclusion-limits">
+            <span>03</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Limites du prototype
+            </p>
+            <p>Le prototype repose actuellement sur&nbsp;:</p>
+            <ul>
+              <li>des données fictives</li>
+              <li>des recommandations simulées</li>
+              <li>une géolocalisation non réelle</li>
+              <li>une réservation partenaire fictive</li>
+              <li>des témoignages fictifs</li>
+              <li>
+                une interprétation émotionnelle créative et non scientifique
+              </li>
+              <li>
+                deux proto-personas non validés par une étude utilisateur dédiée
+              </li>
+            </ul>
+          </article>
+          <!-- CONTENT END: SECTION 12 LIMITS -->
+          <!-- CONTENT START: SECTION 12 PERSPECTIVES -->
+          <article class="conclusion-perspectives">
+            <span>04</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Perspectives
+            </p>
+            <p>Une version future pourrait intégrer&nbsp;:</p>
+            <ul>
+              <li>des données culturelles en temps réel</li>
+              <li>une géolocalisation précise</li>
+              <li>des partenariats avec des lieux culturels</li>
+              <li>un historique des profils Tempo</li>
+              <li>un retour après chaque expérience</li>
+              <li>
+                une logique de recommandation progressivement personnalisée
+              </li>
+              <li>des fonctionnalités de partage</li>
+              <li>un système de réservation partenaire</li>
+              <li>davantage d’options d’accessibilité</li>
+            </ul>
+          </article>
+          <!-- CONTENT END: SECTION 12 PERSPECTIVES -->
+        </div>
+
+        <!-- CONTENT START: SECTION 12 PUBLIC RESOURCES -->
+        <article class="public-resources">
+          <div>
+            <span>05</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Pistes techniques
+            </p>
+            <h3>
+              Des ressources publiques à étudier lors d’une phase ultérieure.
+            </h3>
+            <p>
+              Ces ressources constituent uniquement des pistes techniques. Elles
+              ne sont pas intégrées au prototype actuel.
+            </p>
+          </div>
+          <ol>
+            <li>
+              <a
+                href="https://developers.openagenda.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>[20]</b><strong>OpenAgenda</strong
+                ><span>Consulter et éditer des contenus événementiels.</span
+                ><i>↗</i></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://culture.data.gouv.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>[21]</b><strong>Ministère de la Culture</strong
+                ><span>Explorer les API et jeux de données culturels.</span
+                ><i>↗</i></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://cartes.gouv.fr/aide/fr/guides-utilisateur/utiliser-les-services-de-la-geoplateforme/geocodage/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>[22]</b><strong>Géoplateforme</strong
+                ><span
+                  >Obtenir notamment des coordonnées à partir d’une
+                  adresse.</span
+                ><i>↗</i></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://knowledge4policy.ec.europa.eu/projects-activities/cultural-gems_en"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>[23]</b><strong>Cultural Gems</strong
+                ><span>Cartographier des lieux culturels et créatifs.</span
+                ><i>↗</i></a
+              >
+            </li>
+          </ol>
+        </article>
+        <!-- CONTENT END: SECTION 12 PUBLIC RESOURCES -->
+
+        <!-- CONTENT START: SECTION 12 FINAL SENTENCE -->
+        <blockquote class="final-line copy-placeholder copy-placeholder--quote">
+          Tempo ne cherche pas seulement à recommander une sortie. Il transforme
+          une émotion en possibilité de découverte.
+        </blockquote>
+        <!-- CONTENT END: SECTION 12 FINAL SENTENCE -->
+
+        <!-- CONTENT START: SECTION 12 AI TRANSPARENCY -->
+        <article class="ai-transparency">
+          <div>
+            <span>06</span>
+            <p class="copy-placeholder copy-placeholder--eyebrow">
+              Transparence sur l’usage de l’intelligence artificielle
+            </p>
+          </div>
+          <div>
+            <p>
+              Par manque de temps, une partie du travail a été réalisée avec
+              l’aide de l’intelligence artificielle afin d’alléger la charge de
+              travail. Néanmoins, la conception, la direction artistique,
+              l’écriture de la majorité des textes ainsi que la logique UI/UX
+              ont été réalisées par SENE Ndeela.
+            </p>
+            <p>
+              L’intelligence artificielle a principalement servi d’outil
+              d’assistance pour certaines tâches de développement, de
+              structuration, de reformulation et de production technique.
+            </p>
+            <p>
+              Les propositions générées ont été relues, sélectionnées, adaptées
+              et intégrées selon la direction définie par l’autrice du projet.
+            </p>
+          </div>
+        </article>
+        <!-- CONTENT END: SECTION 12 AI TRANSPARENCY -->
+        <div class="final-actions">
+          <a class="tempo-button" href="#chapter-01"
+            ><span>Revenir au début</span><i>↑</i></a
+          ><a
+            class="tempo-button tempo-button--ghost"
+            href="https://ndeelaa.github.io/Tempo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Prototype interactif ↗</a
+          >
+        </div>
+        <footer>
+          <span class="brand">tempo<span>.</span></span>
+          <p>SENE Ndeela Marie · ICAN · 2025–2026</p>
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
