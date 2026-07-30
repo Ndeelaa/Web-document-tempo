@@ -44,7 +44,6 @@
     document.querySelector('#flow-label').textContent=`Étape ${n} / 11`;
     document.querySelector('#flow-title').textContent=step.dataset.title||'';
     document.querySelector('#flow-description').textContent=step.dataset.description||'';
-    document.querySelector('#flow-path').textContent=`assets/images/flow-step-${n}.png`;
   }));
 
   const video=document.querySelector('#tempo-prototype-video');
